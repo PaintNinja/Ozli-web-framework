@@ -1,0 +1,93 @@
+/* Designed based on the guidelines from Apple. Made by Oscar Nardone.
+    - https://developer.apple.com/ios/human-interface-guidelines/visual-design/typography
+    - https://developer.apple.com/ios/human-interface-guidelines/visual-design/color/
+    - https://icons8.com/ios
+
+   With help from:
+    - https://stackoverflow.com/questions/32660748/how-to-use-apples-new-san-francisco-font-on-a-webpage
+    - https://stackoverflow.com/questions/11978995/how-to-change-color-of-svg-image-using-css-jquery-svg-image-replacement
+*/
+* {
+    font-family: -apple-system, BlinkMacSystemFont, system-ui;
+
+    --blue: rgb(0,122,255);
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 100vw;
+    height: 48px;
+
+    margin: 0;
+    border: 0;
+    border-top: solid 1px #aaa;
+
+    background-color: rgba(255,255,255,0.9);
+    /*-webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);*/
+}
+nav ul {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+}
+nav li {
+    box-sizing: border-box;
+    height: 24px;
+    width: 100%;
+
+    text-align: center;
+    vertical-align: bottom;
+    padding-top: 0;
+}
+nav li button {
+    height: 48px;
+    margin-top: 1px;
+    width: 100%;
+
+    text-align: center;
+    vertical-align: bottom;
+
+    background: no-repeat center;
+    background-size: 24px;
+    background-position: top;
+
+    padding-top: 24px;
+
+    border: transparent;
+
+    font-size: 11.5px; /* CSS pixels are different from physical pixels in terms of sizing as of CSS3.1 */
+    color: #000;
+
+    filter: saturate(0%);
+}
+li.active {
+    color: var(--blue);
+
+    filter: saturate(100%);
+}
+
+.today-apps {
+    background-image: url('iOS/icons/today_apps.svg');
+}
+.rocket {
+    background-image: url('iOS/icons/rocket.svg');
+}
+.layers {
+    background-image: url('iOS/icons/layers.svg');
+}
+.download {
+    background-image: url('iOS/icons/download.svg');
+}
+.search {
+    background-image: url('iOS/icons/search.svg');
+}

@@ -1,4 +1,4 @@
-/* Made by Oscar Nardone 2018-2020
+/* Made by Oscar Nardone 2018
 
 With help from:
 - https://www.mozilla.org/en-US/developer/css-grid/
@@ -15,94 +15,33 @@ With help from:
     margin: 0 auto;    
     padding-left: 5%;
     padding-right: 5%;
-    max-width: 1800px;
     max-width: calc(1600px + 10%);
 
     transition: padding ease-in-out 0.2s;
 }
 
-/* 12-column based grid */
-[data-grid~=col-12], [data-grid*=grid-col-] {
-    display: -ms-grid;
+[data-grid~=col-12] {
     display: grid;
     grid-gap: 8px;
-    -ms-grid-columns: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
 }
 
-/* 6-column based grid */
-[data-grid~=grid-col-6] {
-    -ms-grid-columns: repeat(6, 1fr);
-    grid-template-columns: repeat(6, 1fr);
-}
-
-/* 3-column based grid */
-[data-grid~=grid-col-3] {
-    -ms-grid-columns: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-}
-
-[data-grid*=col-], [data-grid~=container], [data-grid*=grid-col-] {
+[data-grid*=col-], [data-grid~=container] {
     box-sizing: border-box; /* Prevent the grid from breaking when additional padding is added to grid items */
 }
 
-[data-grid~=col-12]>[data-grid~=col-12], [data-grid~=grid-col-12]>[data-grid~=col-12],
-[data-grid~=col-12]>[data-grid~=col-fill], [data-grid~=grid-col-12]>[data-grid~=col-fill] { 
-    -ms-grid-column: span 12;
-    grid-column: span 12;
-}
-[data-grid~=col-12]>[data-grid~=col-11],
-[data-grid~=grid-col-12]>[data-grid~=col-11] {
-    -ms-grid-column: span 11;
-    grid-column: span 11;
-}
-[data-grid~=col-12]>[data-grid~=col-10],
-[data-grid~=grid-col-12]>[data-grid~=col-10] {
-    -ms-grid-column: span 10;
-    grid-column: span 10;
-}
-[data-grid~=col-12]>[data-grid~=col-9],
-[data-grid~=grid-col-12]>[data-grid~=col-9] {
-    -ms-grid-column: span 9;
-    grid-column: span 9;
-}
-[data-grid~=col-12]>[data-grid~=col-8],
-[data-grid~=grid-col-12]>[data-grid~=col-8] {
-    -ms-grid-column: span 8;
-    grid-column: span 8;
-}
-[data-grid~=col-12]>[data-grid~=col-7],
-[data-grid~=grid-col-12]>[data-grid~=col-7] {
-    -ms-grid-column: span 7;
-    grid-column: span 7;
-}
-[data-grid~=col-12]>[data-grid~=col-6], [data-grid~=grid-col-12]>[data-grid~=col-6],
-[data-grid~=grid-col-6]>[data-grid~=col-fill], [data-grid~=grid-col-12]>[data-grid~=col-half] {
-    -ms-grid-column: span 6;
-    grid-column: span 6;
-}
-[data-grid~=col-12]>[data-grid~=col-5], [data-grid~=grid-col-12]>[data-grid~=col-5],
-[data-grid~=grid-col-6]>[data-grid~=col-5] {
-    -ms-grid-column: span 5;
-    grid-column: span 5;
-}
-[data-grid~=col-12]>[data-grid~=col-4], [data-grid~=grid-col-12]>[data-grid~=col-4],
-[data-grid~=grid-col-6]>[data-grid~=col-4], [data-grid~=grid-col-12]>[data-grid~=col-third] {
-    -ms-grid-column: span 4;
-    grid-column: span 4;
-}
-[data-grid~=col-12]>[data-grid~=col-3], [data-grid~=grid-col-12]>[data-grid~=col-3],
-[data-grid~=grid-col-6]>[data-grid~=col-3], [data-grid~=grid-col-3]>[data-grid~=col-fill],
-[data-grid~=grid-col-6]>[data-grid~=col-half], [data-grid~=grid-col-12]>[data-grid~=col-quarter] {
-    -ms-grid-column: span 3;
-    grid-column: span 3;
-}
-[data-grid~=col-12]>[data-grid~=col-2], [data-grid~=grid-col-12]>[data-grid~=col-2],
-[data-grid~=grid-col-6]>[data-grid~=col-2], [data-grid~=grid-col-3]>[data-grid~=col-2],
-[data-grid~=grid-col-6]>[data-grid~=col-third] {
-    -ms-grid-column: span 2;
-    grid-column: span 2;
-}
+
+[data-grid~=col-12]>[data-grid~=col-12] { grid-column: span 12; }
+[data-grid~=col-12]>[data-grid~=col-11] { grid-column: span 11; }
+[data-grid~=col-12]>[data-grid~=col-10] { grid-column: span 10; }
+[data-grid~=col-12]>[data-grid~=col-9] { grid-column: span 9; }
+[data-grid~=col-12]>[data-grid~=col-8] { grid-column: span 8; }
+[data-grid~=col-12]>[data-grid~=col-7] { grid-column: span 7; }
+[data-grid~=col-12]>[data-grid~=col-6] { grid-column: span 6; }
+[data-grid~=col-12]>[data-grid~=col-5] { grid-column: span 5; }
+[data-grid~=col-12]>[data-grid~=col-4] { grid-column: span 4; }
+[data-grid~=col-12]>[data-grid~=col-3] { grid-column: span 3; }
+[data-grid~=col-12]>[data-grid~=col-2] { grid-column: span 2; }
 /* No CSS is needed for col-1 as that is the default column sizing anyway */
 
 /* Stacking */
@@ -119,7 +58,6 @@ With help from:
     [data-grid~=stack-5][data-grid~=col-12]>[data-grid~=col-4],
     [data-grid~=stack-5][data-grid~=col-12]>[data-grid~=col-3],
     [data-grid~=stack-5][data-grid~=col-12]>[data-grid~=col-2] {
-        -ms-grid-column: span 12;
         grid-column: span 12;
     }
 }
@@ -137,7 +75,6 @@ With help from:
     [data-grid~=stack-4][data-grid~=col-12]>[data-grid~=col-4],
     [data-grid~=stack-4][data-grid~=col-12]>[data-grid~=col-3],
     [data-grid~=stack-4][data-grid~=col-12]>[data-grid~=col-2] {
-        -ms-grid-column: span 12;
         grid-column: span 12;
     }
 }
@@ -155,7 +92,6 @@ With help from:
     [data-grid~=stack-3][data-grid~=col-12]>[data-grid~=col-4],
     [data-grid~=stack-3][data-grid~=col-12]>[data-grid~=col-3],
     [data-grid~=stack-3][data-grid~=col-12]>[data-grid~=col-2] {
-        -ms-grid-column: span 12;
         grid-column: span 12;
     }
 
@@ -180,7 +116,6 @@ With help from:
     [data-grid~=col-12]>[data-grid~=col-4],
     [data-grid~=col-12]>[data-grid~=col-3],
     [data-grid~=col-12]>[data-grid~=col-2] {
-        -ms-grid-column: span 12;
         grid-column: span 12;
     }
 
@@ -205,7 +140,6 @@ With help from:
     [data-grid~=col-12]>[data-grid~=col-4],
     [data-grid~=col-12]>[data-grid~=col-3],
     [data-grid~=col-12]>[data-grid~=col-2] {
-        -ms-grid-column: span 12;
         grid-column: span 12;
     }
 
@@ -235,6 +169,5 @@ With help from:
     /*grid-column: none;*/
 }
 .item.gone {
-    -ms-grid-column: none;
     grid-column: none;
 }
