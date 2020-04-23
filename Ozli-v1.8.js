@@ -16,3 +16,21 @@ function openDialogueBox(dialogueBoxClassName) {
         }
     } catch {}
 }
+
+
+function startTickerStrip(elementID, speed, updateInterval) {
+    let lastScrollPos = 0;
+    setInterval(function() {
+        elementID.style.scrollBehavior = "smooth";
+        elementID.scrollBy(speed, 0);
+        //console.log(`lastScrollPos: ${lastScrollPos}`);
+        //console.log(`elementID.scrollLeft: ${elementID.scrollLeft}`);
+        if (lastScrollPos === elementID.scrollLeft) {
+            elementID.style.scrollBehavior = "unset";
+            elementID.scrollLeft = 0;
+            return;
+        } else {
+            lastScrollPos = elementID.scrollLeft;
+        }
+    }, updateInterval)
+}

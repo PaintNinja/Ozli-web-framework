@@ -1118,3 +1118,28 @@ footer.lightweight {
 i.icon, span.icon {
     font-style: normal;
 }
+
+
+/* Ticker strips */
+span.tickerStrip {
+    display: inline-block;
+    height: 2.5rem;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin: auto 0;
+    clip-path: inset(0 0 18px 0);
+    scroll-behavior: smooth;
+}
+/*
+span.tickerStrip:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5rem;
+    background: linear-gradient(to right, #fff, transparent, #fff);
+}
+*/
