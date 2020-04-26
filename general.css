@@ -1100,7 +1100,7 @@ footer.lightweight {
 
 /* Cards */
 .card {
-    margin: 1rem;
+    /*margin: 1rem;*/
     padding: 0.5rem;
 
     background: #fff;
