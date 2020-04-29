@@ -310,7 +310,7 @@ body.darkMode .persona p.persona {
 /* Images */
 img.round, img.rounded, img.circle, img.circular,
 picture.round, picture.rounded, picture.circle, picture.circular {
-	border-radius: 100%;
+	clip-path: circle(at center);
 }
 
 /* Buttons */
